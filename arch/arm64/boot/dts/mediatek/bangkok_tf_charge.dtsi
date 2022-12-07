@@ -1,0 +1,97 @@
+// SPDX-License-Identifier: GPL-2.0+
+&pe {
+	status = "disabled";
+};
+
+&pe2 {
+	status = "disabled";
+};
+
+&pe4 {
+	status = "disabled";
+};
+
+&pdc {
+	status = "disabled";
+};
+
+&mtk_charger_type {
+	bc12_active = <1>;
+};
+
+&usb {
+	charger = <&mtk_charger_type>;
+};
+
+&lk_charger {
+	/delete-property/enable_pe_plus;
+	/delete-property/enable_pd20_reset;
+	/delete-property/power_path_support;
+
+	ac_charger_current = <500000>;
+	charging_host_charger_current = <500000>;
+	led_brightness = <127>;
+	blinking_times = <6>;
+	blinking_period = <1500>;
+	temp_t4_threshold = <55>;
+	temp_t1_threshold = <0>;
+};
+
+&charger {
+	charger = <&mtk_charger_type>;
+	/delete-property/enable_pe_plus;
+	/delete-property/enable_pe_2;
+	/delete-property/enable_pe_3;
+	/delete-property/enable_pe_4;
+	/delete-property/enable_type_c;
+	/delete-property/power_path_support;
+	/delete-property/enable_min_charge_temp;
+	/delete-property/enable_dynamic_mivr;
+	ac_charger_input_current = <1000000>;
+	ac_charger_current = <1050000>;
+	charging_host_charger_current = <1250000>;
+	battery_cv = <4400000>;
+	enable_sw_jeita;
+	/* sw jeita */
+	jeita_temp_above_t4_cv = <4100000>;
+	jeita_temp_t3_to_t4_cv = <4100000>;
+	jeita_temp_t2_to_t3_cv = <4400000>;
+	jeita_temp_t1_to_t2_cv = <4400000>;
+	jeita_temp_t0_to_t1_cv = <4400000>;
+	jeita_temp_below_t0_cv = <4400000>;
+	jeita_temp_t3_to_t4_cc = <1050000>; /* 43 - 55 Degree */
+	jeita_temp_t1_to_t2_cc = <550000>; /* 0 - 10 Degree */
+
+	temp_t4_thres = <53>;
+	temp_t4_thres_minus_x_degree = <51>;
+	temp_t3_thres = <42>;
+	temp_t3_thres_minus_x_degree = <43>;
+	temp_t2_thres = <11>;
+	temp_t2_thres_plus_x_degree = <10>;
+	temp_t1_thres = <1>;
+	temp_t1_thres_plus_x_degree = <0>;
+	temp_t0_thres = <1>;
+	temp_t0_thres_plus_x_degree = <0>;
+	temp_neg_10_thres = <1>;
+
+	min_charge_temp = <1>;
+	min_charge_temp_plus_x_degree = <1>;
+	max_charge_temp = <53>;
+	max_charge_temp_minus_x_degree = <51>;
+};
+
+&i2c5 {
+	bq24158:bq24158@D6{
+		compatible = "mediatek,bq24158";
+		reg = <0x6A>;
+		chg_name = "primary_chg";
+		ichg = <500000>;		/* uA */
+		aicr = <500000>;		/* uA */
+		cv = <4400000>;			/* uA */
+		ieoc = <150000>;		/* uA */
+		bc12_sel = <1>;
+		weak_vbat = <3400000>;
+		resistor-sense = <68>;
+		status = "okay";
+	};
+};

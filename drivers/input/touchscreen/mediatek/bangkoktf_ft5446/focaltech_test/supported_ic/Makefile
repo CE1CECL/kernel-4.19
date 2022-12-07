@@ -1,0 +1,2 @@
+obj-$(CONFIG_TOUCHSCREEN_MTK_FT5446_BANGKOKTF) += focaltech_test_ft5446.o
+obj-$(CONFIG_TOUCHSCREEN_MTK_FT5446_BANGKOKTF) += focaltech_test_ft5446_p03.o

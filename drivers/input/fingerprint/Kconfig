@@ -1,0 +1,53 @@
+#
+#Fingerprint
+#
+menu "Fingerprint support"
+	depends on INPUT
+
+config MTK_FINGERPRINT_SUPPORT
+	bool "Mediatek Fingerprint"
+	default n
+	help
+	  Fingerprint mtk driver enable/disable
+	  in the kernel.Say Y here if you want to
+	  use mediatek fingerprint driver,fingerprint
+	  driver will support fingerprint function
+
+#Begin Modified by zhikui.li,chang the default configuration
+if MTK_FINGERPRINT_SUPPORT
+config MTK_FINGERPRINT_SELECT
+	string "sensor type"
+	default "FT9362"
+#   default "GF318M"
+#end Modified by zhikui.li,chang the default configuration
+endif
+
+config MTK_FINGERPRINT
+	tristate "Mediatek Fingerprint"
+	default n
+
+config FOCAL_FINGERPRINT
+        bool "Focaltech Fingerprint"
+        default n
+
+config JRD_SUNWAVE_FINGERPRINT
+	tristate "SUNWAVE Fingerprint"
+	default n
+
+
+if MTK_FINGERPRINT_SELECT = "GF318M" ||  MTK_FINGERPRINT_SELECT = "GF5216"
+config GOODIX_FINGERPRINT
+	bool "Goodix Fingerprint"
+	default y
+	help
+	  Goodix Fingerprint chip GF316M/GF318M/GF3118M/GF518M/GF5118M/GF516M/GF816M/GF3208/GF3206/
+	  GF3266/GF3288/GF5206/GF5216/GF5208 TEE driver
+
+config GOODIX_SENSOR_TYPE
+	string "SENSOR_TYPE"
+	default "GF5216"
+	help
+	  Must input sensor type, or default is GF316M GF318M GF3118M GF518M GF5118M GF516M GF816M
+	  GF3208 GF3206 GF3266 GF3288 GF5206 GF5216 GF5208
+endif
+endmenu

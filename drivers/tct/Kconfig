@@ -1,0 +1,13 @@
+config TCT_UI_TURBO
+	bool "ui turbo v1.0"
+	default n
+
+config TCT_STAT
+	bool "tct statistics feature"
+	depends on TCT_UI_TURBO
+	default n
+
+config TCT_PERF
+	bool "tct performace control device"
+	depends on TCT_UI_TURBO
+	default n

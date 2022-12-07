@@ -1,0 +1,9 @@
+config SEOUL_2ND_MC3416
+	bool "SEOUL_2ND_MC3416 for MediaTek package"
+	default n
+	help
+	  It support different accelerometer sensor.
+          If this option is set,
+	  it will support
+          SEOUL_2ND_MC3416 Accelerometer.
+

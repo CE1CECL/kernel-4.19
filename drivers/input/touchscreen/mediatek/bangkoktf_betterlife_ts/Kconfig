@@ -1,0 +1,99 @@
+#
+# Touchscreen driver configuration
+#
+
+config TOUCHSCREEN_MTK_BTL
+    bool "betterlife tp"
+	default n
+	---help---
+	betterlife fingerprint.
+
+config BTL_CHECK_CHIPID
+	bool "btl check chip id during boot"
+	default y
+	help
+	Say Y here if you want to check chip id
+
+	If unsure, say N.
+
+	To compile this dirver as a module, choose M here: the
+	module will be called.
+
+config BTL_DEBUG
+	bool "btl debug enable"
+	default y
+	help
+	Say Y here if you want to enable debug
+
+	If unsure, say N.
+
+	To compile this dirver as a module, choose M here: the
+	module will be called.
+
+config TPD_ROTATE_90
+	bool "btl for Mediatek package"
+	default n
+	help
+	Say Y here if you have btl touch panel TPD_ROTATE_90.
+
+	If unsure, say N.
+
+	To compile this dirver as a module, choose M here: the
+	module will be called.
+
+config TPD_ROTATE_180
+	bool "btl for Mediatek package"
+	default n 
+	help
+	Say Y here if you have bl6xx0 touch panel TPD_ROTATE_180.
+
+	If unsure, say N.
+
+	To compile this dirver as a module, choose M here: the
+	module will be called.
+
+config TPD_ROTATE_270
+	bool "btl for Mediatek package"
+	default n
+	help
+	Say Y here if you have btl touch panel TPD_ROTATE_270.
+
+	If unsure, say N.
+
+	To compile this dirver as a module, choose M here: the
+	module will be called.
+
+config TPD_ROTATE_X_180
+	bool "btl for Mediatek package"
+	default n
+	help
+	Say Y here if you have bl6xx0 touch panel TPD_ROTATE_180.
+
+	If unsure, say N.
+
+	To compile this dirver as a module, choose M here: the
+	module will be called.
+
+
+config BL_AUTO_UPGRADE_SUPPORT
+	bool "btl for Mediatek package"
+	default n
+	help
+	Say Y here if you have btl touch panel BL_AUTO_UPGRADE_SUPPORT.
+
+	If unsure, say N.
+
+	To compile this dirver as a module, choose M here: the
+	module will be called.
+
+config CUST_BL_APK_DEBUG
+	bool "btl for Mediatek package"
+	default n
+	help
+	Say Y here if you have btl touch panel CUST_BL_APK_DEBUG.
+
+	If unsure, say N.
+
+	To compile this dirver as a module, choose M here: the
+	module will be called.
+

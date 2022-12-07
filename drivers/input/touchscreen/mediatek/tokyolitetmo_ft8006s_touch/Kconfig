@@ -1,0 +1,12 @@
+#
+# Focaltech Touchscreen driver configuration
+#
+
+if TOUCHSCREEN_MTK_TOKYOLITETMO_FT8006S
+  
+config TOUCHSCREEN_FTS_DIRECTORY
+    string "Focaltech ts directory name"
+    default "focaltech_touch"
+    depends on TOUCHSCREEN_MTK_TOKYOLITETMO_FT8006S
+
+endif

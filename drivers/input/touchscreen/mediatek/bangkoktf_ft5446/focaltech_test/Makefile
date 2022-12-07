@@ -1,0 +1,3 @@
+obj-$(CONFIG_TOUCHSCREEN_MTK_FT5446_BANGKOKTF) += focaltech_test.o
+obj-$(CONFIG_TOUCHSCREEN_MTK_FT5446_BANGKOKTF) += focaltech_test_ini.o
+obj-$(CONFIG_TOUCHSCREEN_MTK_FT5446_BANGKOKTF) += supported_ic/

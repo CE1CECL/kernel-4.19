@@ -1,0 +1,23 @@
+
+/dts-v1/;
+#include "mediatek/mt6797.dtsi"
+
+/ {
+	model = "MediaTek MT6797 Evaluation Board";
+	compatible = "mediatek,mt6797-evb", "mediatek,mt6797";
+
+	aliases {
+		serial0 = &uart0;
+	};
+
+	memory@40000000 {
+		device_type = "memory";
+		reg = <0 0x40000000 0 0x1e800000>;
+	};
+
+	chosen {};
+};
+
+&uart0 {
+	status = "okay";
+};
